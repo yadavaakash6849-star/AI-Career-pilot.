@@ -1,0 +1,14 @@
+{
+  "name": "ai-careerpilot",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n web,api -c cyan,green \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm --workspace client run dev",
+    "dev:api": "npm --workspace server run dev",
+    "build": "npm --workspace client run build",
+    "start": "npm --workspace server run start"
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}
